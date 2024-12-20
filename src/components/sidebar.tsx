@@ -153,10 +153,13 @@ export function Sidebar() {
 
       <div className="hidden fixed top-0 left-0 h-screen w-64 border-r md:block bg-white">
         <div className="flex h-full flex-col">
-          <div className="flex h-[60px] items-center gap-2 px-6 whitespace-nowrap">
+          <Link
+            href="/"
+            className="flex h-[60px] items-center gap-2 px-6 whitespace-nowrap"
+          >
             <Image src="/logo.svg" alt="Logo" width={24} height={24} />
             <span className="font-semibold text-xl">CodeAnt AI</span>
-          </div>
+          </Link>
           <div className="px-3 py-2 mb-4">
             <SelectComponent />
           </div>
