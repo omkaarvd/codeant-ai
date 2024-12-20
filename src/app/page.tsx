@@ -114,7 +114,7 @@ const repositories = [
 export default function HomePage() {
   return (
     <>
-      <div className="flex flex-col gap-6 p-4">
+      <div className="flex flex-col gap-4 p-4">
         <div className="flex md:flex-row flex-col gap-2 items-start justify-between">
           <div className="flex flex-col items-start gap-1">
             <h1 className="text-2xl font-bold">Repositories</h1>
@@ -134,7 +134,7 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="relative max-w-xl">
+        <div className="relative z-0 max-w-xl">
           <Input
             type="search"
             placeholder="Search Repositories"

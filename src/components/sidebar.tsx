@@ -1,7 +1,14 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import {
   Cloud,
   Code2,
@@ -102,31 +109,44 @@ export function Sidebar() {
   return (
     <>
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetTrigger asChild>
-          <Button variant="ghost" className="px-2 md:hidden">
-            <Menu className="h-6 w-6" />
-            <span className="sr-only">Toggle navigation menu</span>
-          </Button>
-        </SheetTrigger>
-        <SheetContent side="left" className="w-64">
+        <div className="flex flex-row justify-between px-4 items-center md:hidden border-b fixed top-0 left-0 z-10 h-12 w-full bg-white">
+          <Link href="/" className="flex items-center gap-2 whitespace-nowrap">
+            <Image src="/logo.svg" alt="Logo" width={24} height={24} />
+            <span className="font-semibold">CodeAnt AI</span>
+          </Link>
+          <SheetTrigger asChild>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden hover:bg-white"
+            >
+              <Menu className="scale-125" />
+            </Button>
+          </SheetTrigger>
+        </div>
+
+        <SheetContent
+          side="top"
+          className="w-full"
+          aria-describedby={undefined}
+        >
           <div className="flex h-full flex-col gap-4">
-            <div className="flex items-center gap-2 px-2 whitespace-nowrap">
-              <Image src="/logo.svg" alt="Logo" width={24} height={24} />
-              <span className="font-semibold">CodeAnt AI</span>
-            </div>
-            <div className="px-2">
-              <select className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm">
-                <option>omkardate</option>
-                <option>omkardate</option>
-                <option>omkardate</option>
-              </select>
-            </div>
+            <SheetHeader className="flex flex-row justify-between px-4 items-center h-12 w-full bg-white">
+              <Link
+                href="/"
+                className="flex items-center gap-2 whitespace-nowrap"
+              >
+                <Image src="/logo.svg" alt="Logo" width={24} height={24} />
+                <SheetTitle className="font-semibold">CodeAnt AI</SheetTitle>
+              </Link>
+            </SheetHeader>
+            <SelectComponent />
             <nav className="flex flex-1 flex-col gap-1">
               <NavLinks />
             </nav>
-            <div className="px-2">
+            <SheetFooter className="flex flex-col gap-1">
               <BottomNavLinks />
-            </div>
+            </SheetFooter>
           </div>
         </SheetContent>
       </Sheet>
@@ -138,11 +158,7 @@ export function Sidebar() {
             <span className="font-semibold text-xl">CodeAnt AI</span>
           </div>
           <div className="px-3 py-2 mb-4">
-            <select className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm">
-              <option>omkardate</option>
-              <option>omkardate</option>
-              <option>omkardate</option>
-            </select>
+            <SelectComponent />
           </div>
           <nav className="flex flex-1 flex-col gap-1 px-3">
             <NavLinks />
@@ -155,3 +171,11 @@ export function Sidebar() {
     </>
   );
 }
+
+const SelectComponent = () => (
+  <select className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm">
+    <option>omkardate</option>
+    <option>omkardate</option>
+    <option>omkardate</option>
+  </select>
+);
