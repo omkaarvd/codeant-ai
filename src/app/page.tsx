@@ -1,8 +1,7 @@
-import { Sidebar } from "@/components/sidebar";
 import { RepositoryCard } from "@/components/repository-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { RefreshCw, Plus } from "lucide-react";
+import { Plus, RefreshCw } from "lucide-react";
 
 const repositories = [
   {
@@ -114,44 +113,41 @@ const repositories = [
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen">
-      <Sidebar />
-      <main className="flex-1 md:ml-[17rem] mx-4 my-6 rounded-lg border">
-        <div className="flex flex-col gap-6 p-4">
-          <div className="flex items-center justify-between">
-            <div className="flex flex-col items-start gap-1">
-              <h1 className="text-2xl font-bold">Repositories</h1>
-              <p className="text-sm text-gray-500">
-                {repositories.length} total repositories
-              </p>
-            </div>
-            <div className="flex gap-2 flex-row">
-              <Button variant="outline" size="sm">
-                <RefreshCw className="mr-2 h-4 w-4" />
-                Refresh All
-              </Button>
-              <Button size="sm">
-                <Plus className="mr-2 h-4 w-4" />
-                Add Repository
-              </Button>
-            </div>
+    <>
+      <div className="flex flex-col gap-6 p-4">
+        <div className="flex items-center justify-between">
+          <div className="flex flex-col items-start gap-1">
+            <h1 className="text-2xl font-bold">Repositories</h1>
+            <p className="text-sm text-gray-500">
+              {repositories.length} total repositories
+            </p>
           </div>
-
-          <div className="relative">
-            <Input
-              type="search"
-              placeholder="Search Repositories"
-              className="max-w-xl"
-            />
+          <div className="flex gap-2 flex-row">
+            <Button variant="outline" size="sm">
+              <RefreshCw className="mr-2 h-4 w-4" />
+              Refresh All
+            </Button>
+            <Button size="sm">
+              <Plus className="mr-2 h-4 w-4" />
+              Add Repository
+            </Button>
           </div>
         </div>
 
-        <div>
-          {repositories.map((repo) => (
-            <RepositoryCard key={repo.name} {...repo} />
-          ))}
+        <div className="relative">
+          <Input
+            type="search"
+            placeholder="Search Repositories"
+            className="max-w-xl"
+          />
         </div>
-      </main>
-    </div>
+      </div>
+
+      <div>
+        {repositories.map((repo) => (
+          <RepositoryCard key={repo.name} {...repo} />
+        ))}
+      </div>
+    </>
   );
 }

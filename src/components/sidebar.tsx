@@ -1,20 +1,21 @@
 "use client";
 
-import { useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
-import {
-  Menu,
-  Home,
-  Code2,
-  Cloud,
-  FileText,
-  Settings,
-  PhoneCall,
-  LogOut,
-} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Cloud,
+  Code2,
+  FileText,
+  Home,
+  LogOut,
+  Menu,
+  PhoneCall,
+  Settings,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
 
 interface NavItem {
   label: string;
@@ -27,34 +28,38 @@ const navItems: NavItem[] = [
   {
     label: "AI Code Review",
     icon: <Code2 className="size-5" />,
-    href: "/code-review",
+    href: "/nav/code-review",
   },
   {
     label: "Cloud Security",
     icon: <Cloud className="size-5" />,
-    href: "/security",
+    href: "/nav/security",
   },
   {
     label: "How to Use",
     icon: <FileText className="size-5" />,
-    href: "/guide",
+    href: "/nav/guide",
   },
   {
     label: "Settings",
     icon: <Settings className="size-5" />,
-    href: "/settings",
+    href: "/nav/settings",
   },
   {
     label: "Support",
     icon: <PhoneCall className="size-5" />,
-    href: "/support",
+    href: "/nav/support",
   },
-  { label: "Logout", icon: <LogOut className="size-5" />, href: "/sign-in" },
+  {
+    label: "Logout",
+    icon: <LogOut className="size-5" />,
+    href: "/sign-in",
+  },
 ];
 
 export function Sidebar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedItem, setSelectedItem] = useState("Repositories");
+  const pathName = usePathname();
 
   const NavLinks = () => (
     <>
@@ -65,11 +70,10 @@ export function Sidebar() {
             key={item.href}
             href={item.href}
             className={`flex items-center font-medium gap-3 whitespace-nowrap rounded-lg px-3 py-2 transition-all hover:text-gray-900 dark:hover:text-gray-50 ${
-              selectedItem === item.label
-                ? "bg-blue-600 text-white font-bold"
+              pathName === item.href
+                ? "bg-blue-600 text-white font-bold hover:bg-blue-700 hover:text-white"
                 : "text-gray-500"
             }`}
-            onClick={() => setSelectedItem(item.label)}
           >
             {item.icon}
             {item.label}
@@ -127,7 +131,7 @@ export function Sidebar() {
         </SheetContent>
       </Sheet>
 
-      <div className="hidden fixed top-0 left-0 h-screen w-64 border-r bg-gray-100/40 md:block dark:bg-gray-800/40">
+      <div className="hidden fixed top-0 left-0 h-screen w-64 border-r md:block bg-white">
         <div className="flex h-full flex-col">
           <div className="flex h-[60px] items-center gap-2 px-6 whitespace-nowrap">
             <Image src="/logo.svg" alt="Logo" width={24} height={24} />
