@@ -14,17 +14,11 @@ export function RepositoryCard({
   isPublic,
 }: RepositoryCardProps) {
   return (
-    <div className="border-b p-4">
+    <div className="border-t p-4">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <h3 className="font-medium">{name}</h3>
-          <span
-            className={`rounded-full px-2 py-0.5 text-xs ${
-              isPublic
-                ? "bg-blue-100 text-blue-700"
-                : "bg-gray-100 text-gray-700"
-            }`}
-          >
+          <h3 className="font-semibold">{name}</h3>
+          <span className="rounded-full px-2 py-0.5 text-xs bg-blue-50 border border-blue-600 text-blue-600">
             {isPublic ? "Public" : "Private"}
           </span>
         </div>

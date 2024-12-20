@@ -64,7 +64,7 @@ export function Sidebar() {
           <Link
             key={item.href}
             href={item.href}
-            className={`flex items-center font-medium gap-3 rounded-lg px-3 py-2 transition-all hover:text-gray-900 dark:hover:text-gray-50 ${
+            className={`flex items-center font-medium gap-3 whitespace-nowrap rounded-lg px-3 py-2 transition-all hover:text-gray-900 dark:hover:text-gray-50 ${
               selectedItem === item.label
                 ? "bg-blue-600 text-white font-bold"
                 : "text-gray-500"
@@ -86,7 +86,7 @@ export function Sidebar() {
           <Link
             key={item.href}
             href={item.href}
-            className="flex items-center font-medium gap-3 rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            className="flex items-center font-medium gap-3 whitespace-nowrap rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
           >
             {item.icon}
             {item.label}
@@ -106,15 +106,15 @@ export function Sidebar() {
         </SheetTrigger>
         <SheetContent side="left" className="w-64">
           <div className="flex h-full flex-col gap-4">
-            <div className="flex items-center gap-2 px-2">
+            <div className="flex items-center gap-2 px-2 whitespace-nowrap">
               <Image src="/logo.svg" alt="Logo" width={24} height={24} />
               <span className="font-semibold">CodeAnt AI</span>
             </div>
             <div className="px-2">
               <select className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm">
-                <option>Organization 1</option>
-                <option>Organization 2</option>
-                <option>Organization 3</option>
+                <option>omkardate</option>
+                <option>omkardate</option>
+                <option>omkardate</option>
               </select>
             </div>
             <nav className="flex flex-1 flex-col gap-1">
@@ -127,17 +127,17 @@ export function Sidebar() {
         </SheetContent>
       </Sheet>
 
-      <div className="hidden border-r bg-gray-100/40 md:block dark:bg-gray-800/40">
+      <div className="hidden fixed top-0 left-0 h-screen w-64 border-r bg-gray-100/40 md:block dark:bg-gray-800/40">
         <div className="flex h-full flex-col">
-          <div className="flex h-[60px] items-center gap-2 px-6">
+          <div className="flex h-[60px] items-center gap-2 px-6 whitespace-nowrap">
             <Image src="/logo.svg" alt="Logo" width={24} height={24} />
             <span className="font-semibold text-xl">CodeAnt AI</span>
           </div>
-          <div className="px-3 py-2">
+          <div className="px-3 py-2 mb-4">
             <select className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm">
-              <option>OmkarDate</option>
-              <option>OmkarDate</option>
-              <option>OmkarDate</option>
+              <option>omkardate</option>
+              <option>omkardate</option>
+              <option>omkardate</option>
             </select>
           </div>
           <nav className="flex flex-1 flex-col gap-1 px-3">
