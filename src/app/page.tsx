@@ -1,7 +1,7 @@
 import { RepositoryCard } from "@/components/repository-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Plus, RefreshCw } from "lucide-react";
+import { Plus, RefreshCw, Search } from "lucide-react";
 
 const repositories = [
   {
@@ -134,12 +134,13 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="relative">
+        <div className="relative max-w-xl">
           <Input
             type="search"
             placeholder="Search Repositories"
-            className="max-w-xl"
+            className="pl-10 pr-4 w-full"
           />
+          <Search className="absolute left-2 top-1/2 transform -translate-y-1/2 pointer-events-none" />
         </div>
       </div>
 
