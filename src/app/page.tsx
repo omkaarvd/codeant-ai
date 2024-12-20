@@ -1,3 +1,4 @@
+import { Sidebar } from "@/components/sidebar";
 import { RepositoryCard } from "@/components/repository-card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -58,6 +59,7 @@ const repositories = [
 export default function HomePage() {
   return (
     <div className="flex min-h-screen">
+      <Sidebar />
       <main className="flex-1">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col gap-6">
