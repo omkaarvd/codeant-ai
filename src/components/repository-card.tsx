@@ -1,3 +1,4 @@
+import { ClockIcon, Database } from "lucide-react";
 import Link from "next/link";
 
 interface RepositoryCardProps {
@@ -31,8 +32,14 @@ export function RepositoryCard({
             <span className="h-2 w-2 rounded-full bg-blue-500"></span>
             {language}
           </div>
-          <div>{size}</div>
-          <div>Updated {updatedAt}</div>
+          <div className="flex items-center gap-1">
+            <Database className="size-3" />
+            <span>{size}</span>
+          </div>
+          <div className="flex items-center gap-1">
+            <ClockIcon className="size-3" />
+            <span>Updated {updatedAt}</span>
+          </div>
         </div>
       </div>
     </Link>
