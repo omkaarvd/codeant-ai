@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={cn("font-inter antialiased", font.variable)}>
         <div className="flex min-h-screen bg-gray-100">
           <Sidebar />
-          <main className="flex-1 md:ml-[17rem] mx-4 my-6 rounded-lg border bg-white">
+          <main className="flex-1 md:ml-[17rem] m-4 md:my-6 rounded-lg border bg-white">
             {children}
           </main>
         </div>
