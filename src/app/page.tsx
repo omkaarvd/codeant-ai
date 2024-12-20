@@ -123,12 +123,12 @@ export default function HomePage() {
             </p>
           </div>
           <div className="flex gap-2 flex-row">
-            <Button variant="outline" size="sm">
-              <RefreshCw className="mr-2 h-4 w-4" />
+            <Button variant="outline" size="sm" className="text-xs">
+              <RefreshCw className="size-4" />
               Refresh All
             </Button>
-            <Button size="sm">
-              <Plus className="mr-2 h-4 w-4" />
+            <Button size="sm" className="text-xs">
+              <Plus className="size-4" />
               Add Repository
             </Button>
           </div>

@@ -69,9 +69,9 @@ export function Sidebar() {
           <Link
             key={item.href}
             href={item.href}
-            className={`flex items-center font-medium gap-3 whitespace-nowrap rounded-lg px-3 py-2 transition-all hover:text-gray-900 dark:hover:text-gray-50 ${
+            className={`flex items-center font-medium text-sm gap-3 whitespace-nowrap rounded-lg px-3 py-2 transition-all hover:text-gray-900 dark:hover:text-gray-50 ${
               pathName === item.href
-                ? "bg-blue-600 text-white font-bold hover:bg-blue-700 hover:text-white"
+                ? "bg-primary text-white font-bold hover:bg-blue-700 hover:text-white"
                 : "text-gray-500"
             }`}
           >
@@ -90,7 +90,7 @@ export function Sidebar() {
           <Link
             key={item.href}
             href={item.href}
-            className="flex items-center font-medium gap-3 whitespace-nowrap rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
+            className="flex items-center font-medium text-sm gap-3 whitespace-nowrap rounded-lg px-3 py-2 text-gray-500 transition-all hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50"
           >
             {item.icon}
             {item.label}
