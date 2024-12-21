@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ArrowUp } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -43,59 +44,71 @@ const SelfHostedSignInBtns = [
 export default function SignInPage() {
   return (
     <div className="grid min-h-screen md:grid-cols-2 grid-cols-1">
-      <div className="relative hidden flex-col justify-between border-r bg-white p-10 text-white md:flex">
-        <div className="relative z-20">
-          <Card className="w-fit border-0 p-6 backdrop-blur shadow-lg">
-            <div className="flex items-center gap-2">
-              <Image
-                src="/logo.png"
-                alt="CodeAnt AI Logo"
-                width={32}
-                height={32}
-                className="h-8 w-8"
-              />
-              <h2 className="text-lg font-medium">
-                AI to Detect & Autofix Bad Code
-              </h2>
-            </div>
-
-            <div className="mt-8 grid grid-cols-3 gap-4 text-center">
-              <div>
-                <p className="text-2xl font-bold">30+</p>
-                <p className="text-sm text-gray-200">Language Support</p>
+      <div className="hidden flex-col justify-center items-center border-r p-8 md:flex">
+        <div className="relative -mt-36">
+          <Card className="z-0 shadow-lg max-w-lg rounded-3xl">
+            <CardHeader className="border-b">
+              <div className="flex items-center gap-3">
+                <Image src="/logo.svg" alt="Logo" width={30} height={30} />
+                <h1 className="text-xl font-semibold text-navy-900">
+                  AI to Detect & Autofix Bad Code
+                </h1>
               </div>
-
-              <div>
-                <p className="text-2xl font-bold">10K+</p>
-                <p className="text-sm text-gray-200">Developers</p>
+            </CardHeader>
+            <CardContent className="p-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="text-center">
+                  <div className="text-xl font-bold text-navy-900">30+</div>
+                  <div className="text-gray-600 text-sm mt-1">
+                    Language Support
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-xl font-bold text-navy-900">10K+</div>
+                  <div className="text-gray-600 text-sm mt-1">Developers</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-xl font-bold text-navy-900">100K+</div>
+                  <div className="text-gray-600 text-sm mt-1">Hours Saved</div>
+                </div>
               </div>
-
-              <div>
-                <p className="text-2xl font-bold">100K+</p>
-                <p className="text-sm text-gray-200">Hours Saved</p>
-              </div>
-            </div>
+            </CardContent>
           </Card>
 
-          <Card className="mt-4 w-fit border-0 p-6 shadow-lg backdrop-blur">
-            <div className="flex items-center gap-4">
-              <div className="rounded-full bg-primary/10 p-3">
-                <div className="h-6 w-6 rounded-full bg-primary/90" />
+          <Card className="absolute -bottom-40 -right-6 shadow-lg z-10 rounded-3xl">
+            <CardContent className="p-6 flex flex-row justify-between items-start gap-16">
+              <div className="flex flex-col items-start gap-2">
+                <Image
+                  src="/pie-purple.svg"
+                  alt="Logo"
+                  width={54}
+                  height={54}
+                />
+                <div className="flex items-center justify-between mt-2">
+                  <div className="text-sm font-semibold">Issues Fixed</div>
+                </div>
+                <div className="text-3xl font-bold text-navy-900">500K+</div>
               </div>
-
               <div>
-                <p className="text-sm">Issues Fixed</p>
-                <p className="text-2xl font-bold">500K+</p>
+                <div className="flex items-center text-sm font-bold text-primary">
+                  <ArrowUp strokeWidth={3} className="size-4 mr-1" />
+                  <span>14%</span>
+                </div>
+                <p className="text-xs text-gray-600 mt-1">This week</p>
               </div>
-
-              <div className="rounded-full bg-green-500/10 px-2 py-1 text-sm text-green-500">
-                ↑ 14%
-                <span className="ml-1 text-gray-200">This week</span>
-              </div>
-            </div>
+            </CardContent>
           </Card>
         </div>
+
+        <Image
+          src="/large-logo.svg"
+          alt="Logo"
+          width={126}
+          height={126}
+          className="absolute bottom-0 left-0 size-64 mb-4"
+        />
       </div>
+
       <div className="container flex flex-col gap-6 items-center justify-center bg-gray-100">
         <Card className="max-w-xl space-y-8 mx-4">
           <div className="px-8 py-6 space-y-4">
