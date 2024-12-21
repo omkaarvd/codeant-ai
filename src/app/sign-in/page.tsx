@@ -43,7 +43,7 @@ const SelfHostedSignInBtns = [
 
 export default function SignInPage() {
   return (
-    <div className="grid min-h-screen md:grid-cols-2 grid-cols-1">
+    <div className="grid min-h-screen md:grid-cols-2">
       <div className="hidden flex-col justify-center items-center border-r p-8 md:flex">
         <div className="relative -mt-36">
           <Card className="z-0 shadow-lg max-w-lg rounded-3xl">
@@ -141,7 +141,7 @@ export default function SignInPage() {
 
             <div className="p-6 pt-0">
               <TabsContent value="saas">
-                <div className="md:px-16 pt-4 space-y-3 flex flex-col">
+                <div className="w-full pt-4 space-y-3 flex flex-col">
                   {SAASSignInBtns.map((btn) => (
                     <Button key={btn.name} variant="outline" asChild>
                       <Link href={btn.href}>
@@ -159,7 +159,7 @@ export default function SignInPage() {
               </TabsContent>
 
               <TabsContent value="self-hosted">
-                <div className="md:px-16 pt-4 space-y-3 flex flex-col">
+                <div className="w-full pt-4 space-y-3 flex flex-col">
                   {SelfHostedSignInBtns.map((btn) => (
                     <Button key={btn.name} variant="outline" asChild>
                       <Link href={btn.href}>
