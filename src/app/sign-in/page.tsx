@@ -111,18 +111,18 @@ export default function SignInPage() {
 
       <div className="container flex flex-col gap-6 items-center justify-center bg-gray-100">
         <Card className="max-w-xl w-full">
-          <div className="p-6 space-y-4">
-            <div className="text-center space-y-6">
-              <div className="flex items-center justify-center gap-2 whitespace-nowrap">
-                <Image src="/logo.svg" alt="Logo" width={24} height={24} />
-                <span className="text-xl font-semibold">CodeAnt AI</span>
+          <Tabs defaultValue="saas">
+            <div className="p-6 pb-4 space-y-4 border-b-2">
+              <div className="text-center space-y-6">
+                <div className="flex items-center justify-center gap-2 whitespace-nowrap">
+                  <Image src="/logo.svg" alt="Logo" width={24} height={24} />
+                  <span className="text-xl font-semibold">CodeAnt AI</span>
+                </div>
+                <h1 className="md:text-2xl text-xl font-semibold tracking-tight whitespace-nowrap">
+                  Welcome to CodeAnt AI
+                </h1>
               </div>
-              <h1 className="md:text-2xl text-xl font-semibold tracking-tight whitespace-nowrap">
-                Welcome to CodeAnt AI
-              </h1>
-            </div>
 
-            <Tabs defaultValue="saas" className="w-full">
               <TabsList className="grid grid-cols-2 w-full [&>[data-state=active]]:bg-primary [&>[data-state=active]]:text-white p-0 h-fit border">
                 <TabsTrigger
                   value="saas"
@@ -137,9 +137,11 @@ export default function SignInPage() {
                   Self Hosted
                 </TabsTrigger>
               </TabsList>
+            </div>
 
+            <div className="pb-6">
               <TabsContent value="saas">
-                <div className="md:px-16 pt-6 space-y-3 flex flex-col">
+                <div className="md:px-16 pt-4 space-y-3 flex flex-col">
                   {SAASSignInBtns.map((btn) => (
                     <Button key={btn.name} variant="outline" asChild>
                       <Link href={btn.href}>
@@ -157,7 +159,7 @@ export default function SignInPage() {
               </TabsContent>
 
               <TabsContent value="self-hosted">
-                <div className="md:px-16 pt-6 space-y-3 flex flex-col">
+                <div className="md:px-16 pt-4 space-y-3 flex flex-col">
                   {SelfHostedSignInBtns.map((btn) => (
                     <Button key={btn.name} variant="outline" asChild>
                       <Link href={btn.href}>
@@ -173,8 +175,8 @@ export default function SignInPage() {
                   ))}
                 </div>
               </TabsContent>
-            </Tabs>
-          </div>
+            </div>
+          </Tabs>
         </Card>
 
         <p className="text-center text-xs md:text-sm text-muted-foreground">
