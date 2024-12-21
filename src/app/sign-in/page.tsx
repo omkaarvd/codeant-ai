@@ -109,7 +109,7 @@ export default function SignInPage() {
         />
       </div>
 
-      <div className="container flex flex-col gap-6 items-center justify-center bg-gray-100">
+      <div className="container px-4 flex flex-col gap-6 items-center justify-center bg-gray-100">
         <Card className="max-w-xl w-full">
           <Tabs defaultValue="saas">
             <div className="p-6 pb-4 space-y-4 border-b-2">
@@ -139,7 +139,7 @@ export default function SignInPage() {
               </TabsList>
             </div>
 
-            <div className="pb-6">
+            <div className="p-6 pt-0">
               <TabsContent value="saas">
                 <div className="md:px-16 pt-4 space-y-3 flex flex-col">
                   {SAASSignInBtns.map((btn) => (
