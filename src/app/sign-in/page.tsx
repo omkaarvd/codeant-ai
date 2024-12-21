@@ -114,10 +114,13 @@ export default function SignInPage() {
           <Tabs defaultValue="saas">
             <div className="p-6 pb-4 space-y-4 border-b-2">
               <div className="text-center space-y-6">
-                <div className="flex items-center justify-center gap-2 whitespace-nowrap">
+                <Link
+                  href="/"
+                  className="flex items-center justify-center gap-2 whitespace-nowrap"
+                >
                   <Image src="/logo.svg" alt="Logo" width={24} height={24} />
                   <span className="text-xl font-semibold">CodeAnt AI</span>
-                </div>
+                </Link>
                 <h1 className="md:text-2xl text-xl font-semibold tracking-tight whitespace-nowrap">
                   Welcome to CodeAnt AI
                 </h1>
