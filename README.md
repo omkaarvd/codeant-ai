@@ -5,6 +5,14 @@ This project is built using Next.js and includes the following npm scripts for d
 - Node.js installed on your machine.
 - Package manager like `npm`, `pnpm`, or `yarn`.
 
+## Routes
+1. **Home Route**
+- Path: `/`
+- The main landing page of the application.
+2. **Sign-In Route**
+- Path: `/sign-in`
+- The page for users to log in to the application.
+
 ## Getting Started
 
 1. Install dependencies:
